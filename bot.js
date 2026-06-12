@@ -124,7 +124,7 @@ boutons.forEach(btn => {
       box.innerHTML = `
         <h3 class="titre-carte">🏷️ Créer une étiquette Chronopost</h3>
         <video controls style="width:100%; border-radius:14px; margin-top:12px;">
-          <source src="Retour Chronopost.mp4" type="video/mp4">
+          <source src="retour-chronopost.mp4" type="video/mp4">
           Votre navigateur ne supporte pas la lecture vidéo.
         </video>
       `;
