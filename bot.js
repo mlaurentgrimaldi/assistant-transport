@@ -175,7 +175,7 @@ else if (cle === "tarifs_heppner") {
   `;
 }
 else {
-  box.textContent = REPONSES[cle];
+  box.innerHTML = REPONSES[cle];
 }
 
     box.style.display = "block";
