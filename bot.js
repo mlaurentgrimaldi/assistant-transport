@@ -29,7 +29,7 @@ https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Ch
   heppner: localStorage.getItem("admin_heppner") || `🚚 CONTACTER HEPPNER
 
 📞 Téléphone : 04 72 23 40 66
-📧 Email : audrey.pierrottet@heppner-group.com`,
+📧 Email : audrey.pierrottet@heppner-group.com / lucie.loubiere@heppner-group.com`,
 
   tarifs_heppner: localStorage.getItem("admin_tarifs_heppner") || `💰 TARIFS HEPPNER
 
