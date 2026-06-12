@@ -21,6 +21,7 @@ https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Ch
 - Chrono 18 -> Assure le délai contractuel de livraison avant 18h00
 - Chrono 13 -> Assure le délai contractuel de livraison avant 13h00
 - Chrono 10 -> Assure le délai contractuel de livraison avant 10h00
+<strong><em><span style="color: red;">Voir la liste des localités desservies par CH-10</span></em></strong>
 - Click and collect -> Livraison dans un point relais choisi par le client`,
 
   etiquette_chronopost: `__VIDEO__`,
