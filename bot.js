@@ -156,23 +156,19 @@ else if (cle === "tarifs_heppner") {
   else if (cle === "localites_chronopost") {
   box.innerHTML = `
     <h3 class="titre-carte">📍 Localités desservies en CH-10</h3>
-    
-      href="https://www.chronopost.fr/sites/chronopost/files/2024-04/couverture_c10_1.pdf"
+    <a href="https://www.chronopost.fr/sites/chronopost/files/2024-04/couverture_c10_1.pdf"
       target="_blank"
-      class="btn-lien"
-    >
+      class="btn-lien">
       Cliquez ici
     </a>
   `;
 }
-else if (cle === "localites_heppner") {
+  else if (cle === "localites_heppner") {
   box.innerHTML = `
     <h3 class="titre-carte">📍 Localités non desservies service STAR</h3>
-    
-      href="https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7B9BA3C9A7-59C1-4627-B435-9098CE6063C0%7D&file=Localit%C3%A9s%20exclues%20Star.xlsx&action=default&mobileredirect=true"
+    <a href="https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7B9BA3C9A7-59C1-4627-B435-9098CE6063C0%7D&file=Localit%C3%A9s%20exclues%20Star.xlsx&action=default&mobileredirect=true"
       target="_blank"
-      class="btn-lien"
-    >
+      class="btn-lien">
       Cliquez ici
     </a>
   `;
