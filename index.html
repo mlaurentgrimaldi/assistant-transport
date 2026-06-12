@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC NEXITUP — Assistant Transport</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <img src="logo ac nexitup.png" alt="AC NEXITUP">
+    <h1>Assistant Transport</h1>
+  </header>
+
+  <main>
+
+    <!-- BOUTON ADMIN CACHE -->
+    <div id="zone-admin-cache"></div>
+
+    <!-- PANNEAU ADMIN -->
+    <div id="adminPanel" class="admin-panel">
+      <div class="admin-box">
+        <div class="admin-header">
+          <h2>⚙️ Administration</h2>
+          <button id="closeAdmin">✕</button>
+        </div>
+        <div class="admin-content">
+
+          <label>📦 Contact Chronopost</label>
+          <textarea id="adminChronopost"></textarea>
+
+          <label>💰 Tarifs Chronopost</label>
+          <textarea id="adminTarifsChronopost"></textarea>
+
+          <label>🛎️ Services Chronopost</label>
+          <textarea id="adminServicesChronopost"></textarea>
+
+          <label>🏷️ Créer une étiquette Chronopost</label>
+          <textarea id="adminEtiquetteChronopost"></textarea>
+
+          <label>🚚 Contact Heppner</label>
+          <textarea id="adminHeppner"></textarea>
+
+          <label>💰 Tarifs Heppner</label>
+          <textarea id="adminTarifsHeppner"></textarea>
+
+          <label>🛎️ Services Heppner</label>
+          <textarea id="adminServicesHeppner"></textarea>
+
+          <label>🔍 Tracking introuvable</label>
+          <textarea id="adminTracking"></textarea>
+
+          <button id="saveAdmin">💾 Sauvegarder les modifications</button>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- BARRE DE RECHERCHE -->
+    <section class="search-section">
+      <form id="searchForm">
+        <div class="search-box">
+          <div class="search-icon">🔎</div>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Rechercher un outil, une procédure, un transporteur..."
+          >
+        </div>
+      </form>
+    </section>
+
+    <div id="suggestions">
+
+      <!-- CHRONOPOST -->
+      <div class="categorie">
+        <h2>📦 Chronopost</h2>
+        <div class="buttons-grid">
+          <button class="suggestion" data-cle="chronopost" data-box="chronopost-reponse">
+            📦 Contacter Chronopost
+          </button>
+          <button class="suggestion" data-cle="tarifs_chronopost" data-box="chronopost-reponse">
+            💰 Tarifs Chronopost
+          </button>
+          <button class="suggestion" data-cle="services_chronopost" data-box="chronopost-reponse">
+            🛎️ Services Chronopost
+          </button>
+          <button class="suggestion" data-cle="etiquette_chronopost" data-box="chronopost-reponse">
+            🏷️ Créer une étiquette Chronopost
+          </button>
+        </div>
+        <div class="reponse-box" id="chronopost-reponse"></div>
+      </div>
+
+      <!-- HEPPNER -->
+      <div class="categorie">
+        <h2>🚚 Heppner</h2>
+        <div class="buttons-grid">
+          <button class="suggestion" data-cle="heppner" data-box="heppner-reponse">
+            🚚 Contacter Heppner
+          </button>
+          <button class="suggestion" data-cle="delais" data-box="heppner-reponse">
+            🗺️ Délais Heppner
+          </button>
+          <button class="suggestion" data-cle="tarifs_heppner" data-box="heppner-reponse">
+            💰 Tarifs Heppner
+          </button>
+          <button class="suggestion" data-cle="services_heppner" data-box="heppner-reponse">
+            🛎️ Services Heppner
+          </button>
+        </div>
+        <div class="reponse-box" id="heppner-reponse"></div>
+      </div>
+
+      <!-- SAV -->
+      <div class="categorie">
+        <h2>🔍 Problème & Suivi</h2>
+        <div class="buttons-grid">
+          <button class="suggestion" data-cle="tracking" data-box="sav-reponse">
+            🔍 Tracking introuvable ?
+          </button>
+        </div>
+        <div class="reponse-box" id="sav-reponse"></div>
+      </div>
+
+      <!-- OUTILS -->
+      <div class="categorie">
+        <h2>⚙️ Outils divers</h2>
+        <div class="buttons-grid">
+          <button class="suggestion" data-cle="groupage" data-box="outils-reponse">
+            📅 Groupages client Hebdo
+          </button>
+          <button class="suggestion" data-cle="cut" data-box="outils-reponse">
+            🕓 Cut-off Expédition
+          </button>
+        </div>
+        <div class="reponse-box" id="outils-reponse"></div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="bot.js" defer></script>
+
+</body>
+</html>

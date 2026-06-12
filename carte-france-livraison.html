@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carte Délais de Livraison — France</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#f0f4f8;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 6px 32px rgba(0,0,0,0.10);
+  padding:24px;
+  max-width:1400px;
+  width:100%;
+  margin:auto;
+}
+
+.header{
+  margin-bottom:18px;
+}
+
+.subtitle{
+  font-size:13px;
+  color:#7a8aa0;
+}
+
+.main{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+}
+
+/* IMPORTANT — carte plus grande */
+#map-wrap{
+  flex: 1 1 auto;   /* prend tout l'espace disponible */
+  min-width: 0;
+}
+
+svg#map{
+  width:100%;
+  height:900px;   /* hauteur augmentée */
+  display:block;
+}
+
+.dep{
+  stroke:#fff;
+  stroke-width:0.4px;
+  cursor:pointer;
+  transition:filter .15s;
+}
+
+.dep:hover{
+  filter:brightness(1.18)
+         drop-shadow(0 0 3px rgba(0,0,0,0.25));
+}
+
+.dep-24h{
+  fill:#1a3fa0;
+}
+
+.dep-48h{
+  fill:#6ab04c;
+}
+
+.dep-unknown{
+  fill:#d9d9d9;
+}
+
+.dim .dep{
+  opacity:.18;
+}
+
+.dim .dep.hi{
+  opacity:1;
+}
+
+.sidebar{
+  width:170px;
+  flex-shrink:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-top:20px;
+}
+
+.leg-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#f7f9fc;
+  border:1.5px solid transparent;
+  border-radius:10px;
+  padding:11px 14px;
+  cursor:pointer;
+  transition:background .15s,border-color .15s;
+}
+
+.leg-btn:hover{
+  background:#eaf0ff;
+}
+
+.leg-btn.active-24{
+  border-color:#1a3fa0;
+  background:#e6ecfa;
+}
+
+.leg-btn.active-48{
+  border-color:#5a9e36;
+  background:#e9f7e0;
+}
+
+.swatch{
+  width:26px;
+  height:26px;
+  border-radius:6px;
+  flex-shrink:0;
+}
+
+.s24{
+  background:#1a3fa0;
+}
+
+.s48{
+  background:#6ab04c;
+}
+
+.leg-label{
+  font-weight:700;
+  font-size:15px;
+  color:#12213d;
+}
+
+.reset-btn{
+  margin-top:4px;
+  background:none;
+  border:1.5px solid #cdd5e0;
+  border-radius:8px;
+  padding:7px 14px;
+  font-size:12px;
+  color:#556;
+  cursor:pointer;
+}
+
+.reset-btn:hover{
+  background:#f0f4f8;
+}
+
+.tooltip{
+  position:fixed;
+  pointer-events:none;
+  background:rgba(15,25,55,0.92);
+  color:#fff;
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:13px;
+  z-index:999;
+  display:none;
+  max-width:240px;
+}
+
+.tt-dep{
+  font-size:11px;
+  opacity:.7;
+}
+
+.tt-delay{
+  margin-top:3px;
+  font-weight:600;
+}
+
+.delay-24{
+  color:#7ab3ff;
+}
+
+.delay-48{
+  color:#9de06a;
+}
+
+@media(max-width:900px){
+  .main{
+    flex-direction:column;
+  }
+
+  #map-wrap{
+    width:100%;
+  }
+
+  svg#map{
+    height:600px;
+  }
+
+  .sidebar{
+    width:100%;
+    flex-direction:row;
+    flex-wrap:wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header">
+  <div class="subtitle">
+    Passez la souris sur un département pour voir son délai
+  </div>
+</div>
+
+<div class="main">
+
+  <div id="map-wrap">
+    <svg id="map" viewBox="0 0 750 720"></svg>
+  </div>
+
+  <div class="sidebar">
+
+    <button class="leg-btn" id="btn24" onclick="filter24()">
+      <div class="swatch s24"></div>
+      <div class="leg-label">⏱ 24H</div>
+    </button>
+
+    <button class="leg-btn" id="btn48" onclick="filter48()">
+      <div class="swatch s48"></div>
+      <div class="leg-label">⏱ 48H</div>
+    </button>
+
+    <button class="reset-btn" onclick="resetFilter()">
+      Afficher tout
+    </button>
+
+  </div>
+
+</div>
+</div>
+
+<div class="tooltip" id="tt">
+  <div class="tt-dep" id="tt-num"></div>
+  <div id="tt-name" style="font-weight:600;font-size:14px;"></div>
+  <div class="tt-delay" id="tt-delay"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+
+<script>
+
+const DEP_24H = new Set([
+"01","02","03","04","05","06","07","08","10",
+"11","12","13","15","18","21","23","24","25",
+"26","30","31","33","34","36","37","38","39","41",
+"42","43","45","48","51","52","54","55","57",
+"58","63","66","67","68","69","70","35","44","49",
+"71","73","74","75","76","77","78","83","84","88",
+"89","90","91","92","93","94","95","85","79","87"
+]);
+
+const DEP_48H = new Set([
+"09","14","16","17","19","22","27","28","29","32",
+"40","46","47","50","53","56","59","60","62","61","64",
+"65","72","80","81","82","86"
+]);
+
+const svg = d3.select("#map");
+const tt = document.getElementById("tt");
+
+async function loadMap(){
+
+  const geo = await d3.json(
+    "https://cdn.jsdelivr.net/gh/gregoiredavid/france-geojson@master/departements-version-simplifiee.geojson"
+  );
+
+  const metro={
+    type:"FeatureCollection",
+    features:geo.features.filter(f=>{
+      const c=(f.properties.code||"").padStart(2,"0");
+      return !["2A","2B","971","972","973","974","976"].includes(c);
+    })
+  };
+
+  const width=750;
+  const height=720;
+
+  const projection=d3.geoConicConformal()
+  .center([2.454071,46.279229])
+  .scale(3400)
+  .translate([375,360]);  /* centré dans le viewBox 750x720 */
+  
+  const path=d3.geoPath().projection(projection);
+
+  const g=svg.append("g");
+
+  g.selectAll("path")
+    .data(metro.features)
+    .join("path")
+    .attr("class",d=>{
+      const code=(d.properties.code||"").padStart(2,"0");
+
+      if(DEP_24H.has(code)) return "dep dep-24h";
+      if(DEP_48H.has(code)) return "dep dep-48h";
+      return "dep dep-unknown";
+    })
+    .attr("d",path)
+    .on("mousemove",function(event,d){
+
+      const code=(d.properties.code||"").padStart(2,"0");
+
+      tt.style.display="block";
+      tt.style.left=(event.clientX+16)+"px";
+      tt.style.top=(event.clientY-10)+"px";
+
+      document.getElementById("tt-num").textContent=
+        "Département "+code;
+
+      document.getElementById("tt-name").textContent=
+        d.properties.nom || code;
+
+      document.getElementById("tt-delay").innerHTML=
+        DEP_24H.has(code)
+        ? '<span class="delay-24">⏱ Livraison en 24H</span>'
+        : '<span class="delay-48">⏱ Livraison en 48H</span>';
+    })
+    .on("mouseleave",()=>{
+      tt.style.display="none";
+    });
+
+  g.selectAll("text")
+    .data(metro.features)
+    .join("text")
+    .attr("x",d=>path.centroid(d)[0])
+    .attr("y",d=>path.centroid(d)[1])
+    .attr("text-anchor","middle")
+    .attr("dominant-baseline","central")
+    .attr("font-size","6px")
+    .attr("font-weight","600")
+    .attr("fill","white")
+    .attr("pointer-events","none")
+    .text(d=>(d.properties.code||"").padStart(2,"0"));
+}
+
+function filter24(){
+  document.getElementById("map").classList.add("dim");
+  document.querySelectorAll(".dep").forEach(el=>{
+    el.classList.toggle("hi",el.classList.contains("dep-24h"));
+  });
+}
+
+function filter48(){
+  document.getElementById("map").classList.add("dim");
+  document.querySelectorAll(".dep").forEach(el=>{
+    el.classList.toggle("hi",el.classList.contains("dep-48h"));
+  });
+}
+
+function resetFilter(){
+  document.getElementById("map").classList.remove("dim");
+  document.querySelectorAll(".dep").forEach(el=>{
+    el.classList.remove("hi");
+  });
+}
+
+loadMap();
+
+</script>
+</body>
+</html>
