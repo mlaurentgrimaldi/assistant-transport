@@ -40,7 +40,8 @@ https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD
 - Star Priority -> Assure le délai contractuel de livraison
 - Star Priority 13 -> Assure le délai contractuel de livraison avant 13h00
 - Star Date -> Assure une livraison à une date précise
-- Star RDV -> Assure une livraison avec prise de RDV`,
+- Star RDV -> Assure une livraison avec prise de RDV
+<strong><em><span style="color: red;">Voir la liste des localités NON desservies par les services STAR</span></em></strong>`,
 
   tracking: localStorage.getItem("admin_tracking") || `🔍 TRACKING INTROUVABLE ?
 
