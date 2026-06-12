@@ -18,10 +18,10 @@ Délais : 72h ou plus selon destination`,
 https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Chain/Transport/Grilles%20tarifaires/Chronopost-2024/tarifs%2046193601-05-12-2024%20chrono%20actuel.pdf?csf=1&web=1&e=65k3vr`,
 
   services_chronopost: localStorage.getItem("admin_services_chronopost") || `🛎️ SERVICES CHRONOPOST
-
+- Chrono 18 -> Assure le délai contractuel de livraison avant 18h00
 - Chrono 13 -> Assure le délai contractuel de livraison avant 13h00
 - Chrono 10 -> Assure le délai contractuel de livraison avant 10h00
-- Pick and collect -> Livraison dans un point relais choisi par le client`,
+- Click and collect -> Livraison dans un point relais choisi par le client`,
 
   etiquette_chronopost: `__VIDEO__`,
 
