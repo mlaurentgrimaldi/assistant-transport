@@ -51,7 +51,7 @@ https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD
 
   portail_heppner: `🌐 PORTAIL HEPPNER
 
-🔗 https://myportal.heppner-group.com/home
+🔗 https://myportal.heppner-group.com/login
 👤 Identifiant : olivier.lefort.1
 🔑 Mot de passe : Nexitup2026*`,
 
@@ -200,7 +200,7 @@ boutons.forEach(btn => {
     else if (cle === "portail_heppner") {
       box.innerHTML = `
         <h3 class="titre-carte">🌐 Portail Heppner</h3>
-        <a href="https://www.heppner.com/fr/" target="_blank" class="btn-lien">
+        <a href="https://myportal.heppner-group.com/login" target="_blank" class="btn-lien">
           Accéder au portail
         </a>
         <p style="margin-top:12px;">👤 Identifiant : <strong>olivier.lefort.1</strong></p>
