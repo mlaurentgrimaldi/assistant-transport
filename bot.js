@@ -26,6 +26,12 @@ https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Ch
 
   etiquette_chronopost: `__VIDEO__`,
 
+  portail_chronopost: `🌐 PORTAIL CHRONOPOST
+
+🔗 https://www.chronopost.fr/fr/espace-client
+👤 Identifiant : adv@hbp-associes.fr
+🔑 Mot de passe : 21017326`,
+
   heppner: localStorage.getItem("admin_heppner") || `🚚 CONTACTER HEPPNER
 
 📞 Téléphone : 04 72 23 40 66
@@ -42,6 +48,12 @@ https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD
 - Star Date -> Assure une livraison à une date précise
 - Star RDV -> Assure une livraison avec prise de RDV
 <strong><em><span style="color: red;">Voir la liste des localités NON desservies par les services STAR</span></em></strong>`,
+
+  portail_heppner: `🌐 PORTAIL HEPPNER
+
+🔗 https://www.heppner.com/fr/
+👤 Identifiant : olivier.lefort.1
+🔑 Mot de passe : Nexitup2026*`,
 
   tracking: localStorage.getItem("admin_tracking") || `🔍 TRACKING INTROUVABLE ?
 
@@ -132,52 +144,72 @@ boutons.forEach(btn => {
       `;
     }
     else if (cle === "tarifs_chronopost") {
-  box.innerHTML = `
-    <h3 class="titre-carte">💰 TARIFS CHRONOPOST</h3>
-    <a
-      href="https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Chain/Transport/Grilles%20tarifaires/Chronopost-2024/tarifs%2046193601-05-12-2024%20chrono%20actuel.pdf?csf=1&web=1&e=65k3vr"
-      target="_blank"
-      class="btn-lien"
-    >
-      Cliquez ici
-    </a>
-  `;
-}
-else if (cle === "tarifs_heppner") {
-  box.innerHTML = `
-    <h3 class="titre-carte">💰 TARIFS HEPPNER</h3>
-    <a
-      href="https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD5B2B25-DB56-4914-A809-829E948824DB%7D&file=GROUPE%20ASAP%20tarif%20applicable%20au%2001%2001%2026%20-%20heppner%20actuel.xlsx&action=default&mobileredirect=true"
-      target="_blank"
-      class="btn-lien"
-    >
-      Cliquez ici
-    </a>
-  `;
-}
-  else if (cle === "localites_chronopost") {
-  box.innerHTML = `
-    <h3 class="titre-carte">📍 Localités desservies en CH-10</h3>
-    <a href="https://www.chronopost.fr/sites/chronopost/files/2024-04/couverture_c10_1.pdf"
-      target="_blank"
-      class="btn-lien">
-      Cliquez ici
-    </a>
-  `;
-}
-  else if (cle === "localites_heppner") {
-  box.innerHTML = `
-    <h3 class="titre-carte">📍 Localités non desservies service STAR</h3>
-    <a href="https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7B9BA3C9A7-59C1-4627-B435-9098CE6063C0%7D&file=Localit%C3%A9s%20exclues%20Star.xlsx&action=default&mobileredirect=true"
-      target="_blank"
-      class="btn-lien">
-      Cliquez ici
-    </a>
-  `;
-}
-else {
-  box.innerHTML = REPONSES[cle];
-}
+      box.innerHTML = `
+        <h3 class="titre-carte">💰 TARIFS CHRONOPOST</h3>
+        
+          href="https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Chain/Transport/Grilles%20tarifaires/Chronopost-2024/tarifs%2046193601-05-12-2024%20chrono%20actuel.pdf?csf=1&web=1&e=65k3vr"
+          target="_blank"
+          class="btn-lien"
+        >
+          Cliquez ici
+        </a>
+      `;
+    }
+    else if (cle === "tarifs_heppner") {
+      box.innerHTML = `
+        <h3 class="titre-carte">💰 TARIFS HEPPNER</h3>
+        
+          href="https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD5B2B25-DB56-4914-A809-829E948824DB%7D&file=GROUPE%20ASAP%20tarif%20applicable%20au%2001%2001%2026%20-%20heppner%20actuel.xlsx&action=default&mobileredirect=true"
+          target="_blank"
+          class="btn-lien"
+        >
+          Cliquez ici
+        </a>
+      `;
+    }
+    else if (cle === "localites_chronopost") {
+      box.innerHTML = `
+        <h3 class="titre-carte">📍 Localités desservies en CH-10</h3>
+        <a href="https://www.chronopost.fr/sites/chronopost/files/2024-04/couverture_c10_1.pdf"
+          target="_blank"
+          class="btn-lien">
+          Cliquez ici
+        </a>
+      `;
+    }
+    else if (cle === "localites_heppner") {
+      box.innerHTML = `
+        <h3 class="titre-carte">📍 Localités non desservies service STAR</h3>
+        <a href="https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7B9BA3C9A7-59C1-4627-B435-9098CE6063C0%7D&file=Localit%C3%A9s%20exclues%20Star.xlsx&action=default&mobileredirect=true"
+          target="_blank"
+          class="btn-lien">
+          Cliquez ici
+        </a>
+      `;
+    }
+    else if (cle === "portail_chronopost") {
+      box.innerHTML = `
+        <h3 class="titre-carte">🌐 Portail Chronopost</h3>
+        <a href="https://www.chronopost.fr/fr/espace-client" target="_blank" class="btn-lien">
+          Accéder au portail
+        </a>
+        <p style="margin-top:12px;">👤 Identifiant : <strong>adv@hbp-associes.fr</strong></p>
+        <p>🔑 Mot de passe : <strong>21017326</strong></p>
+      `;
+    }
+    else if (cle === "portail_heppner") {
+      box.innerHTML = `
+        <h3 class="titre-carte">🌐 Portail Heppner</h3>
+        <a href="https://www.heppner.com/fr/" target="_blank" class="btn-lien">
+          Accéder au portail
+        </a>
+        <p style="margin-top:12px;">👤 Identifiant : <strong>olivier.lefort.1</strong></p>
+        <p>🔑 Mot de passe : <strong>Nexitup2026*</strong></p>
+      `;
+    }
+    else {
+      box.innerHTML = REPONSES[cle];
+    }
 
     box.style.display = "block";
 
