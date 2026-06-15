@@ -51,7 +51,7 @@ https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD
 
   portail_heppner: `🌐 PORTAIL HEPPNER
 
-🔗 https://www.heppner.com/fr/
+🔗 https://myportal.heppner-group.com/home
 👤 Identifiant : olivier.lefort.1
 🔑 Mot de passe : Nexitup2026*`,
 
