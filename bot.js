@@ -143,6 +143,15 @@ boutons.forEach(btn => {
         </video>
       `;
     }
+      else if (cle === "enlevement_heppner") {
+      box.innerHTML = `
+        <h3 class="titre-carte">🚛 Créer un enlèvement Heppner</h3>
+        <video controls style="width:100%; border-radius:14px; margin-top:12px;">
+          <source src="TUTO enlèvement Heppner.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+      `;
+    }
     else if (cle === "tarifs_chronopost") {
       box.innerHTML = `
         <h3 class="titre-carte">💰 TARIFS CHRONOPOST</h3>
