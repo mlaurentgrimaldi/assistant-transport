@@ -65,7 +65,7 @@ Si aucun lien https n'est présent, deux cas possibles :
 1) COMMANDE EXPORT : le tracking a été envoyé par mail avec les documents export au responsable du compte ainsi qu'à la personne ayant saisi la commande.
 
 2) GROUPAGE CLIENT : le champ TRANSPORTEUR indique :
-   - "RH-CH" = regroupement de colis expédiés par Chronopost
+   - "RG-CH" = regroupement de colis expédiés par Chronopost
    - "Classic" = regroupement en palette Heppner
    -> Pour retrouver le tracking, aller dans le compte client et ouvrir les LC expédiées à la même date. L'une d'elles contient le tracking. 🙂`,
 
