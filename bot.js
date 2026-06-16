@@ -155,11 +155,9 @@ boutons.forEach(btn => {
     else if (cle === "tarifs_chronopost") {
       box.innerHTML = `
         <h3 class="titre-carte">💰 TARIFS CHRONOPOST</h3>
-        
-          href="https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Chain/Transport/Grilles%20tarifaires/Chronopost-2024/tarifs%2046193601-05-12-2024%20chrono%20actuel.pdf?csf=1&web=1&e=65k3vr"
+        <a href="https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Chain/Transport/Grilles%20tarifaires/Chronopost-2024/tarifs%2046193601-05-12-2024%20chrono%20actuel.pdf?csf=1&web=1&e=65k3vr"
           target="_blank"
-          class="btn-lien"
-        >
+          class="btn-lien">
           Cliquez ici
         </a>
       `;
@@ -167,11 +165,9 @@ boutons.forEach(btn => {
     else if (cle === "tarifs_heppner") {
       box.innerHTML = `
         <h3 class="titre-carte">💰 TARIFS HEPPNER</h3>
-        
-          href="https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD5B2B25-DB56-4914-A809-829E948824DB%7D&file=GROUPE%20ASAP%20tarif%20applicable%20au%2001%2001%2026%20-%20heppner%20actuel.xlsx&action=default&mobileredirect=true"
+        <a href="https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD5B2B25-DB56-4914-A809-829E948824DB%7D&file=GROUPE%20ASAP%20tarif%20applicable%20au%2001%2001%2026%20-%20heppner%20actuel.xlsx&action=default&mobileredirect=true"
           target="_blank"
-          class="btn-lien"
-        >
+          class="btn-lien">
           Cliquez ici
         </a>
       `;
