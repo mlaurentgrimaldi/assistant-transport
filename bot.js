@@ -2,6 +2,7 @@ const SECRET_CODE = "NEXITUP2026";
 
 const REPONSES = {
 
+  
   chronopost: localStorage.getItem("admin_chronopost") || `📦 CONTACTER CHRONOPOST
 
 📧 Email : service.client@chronopost.fr
@@ -9,9 +10,10 @@ const REPONSES = {
 📞 Téléphone National : 0892 70 25 07
 Horaires : lundi au vendredi, 8h - 18h
 
-📞 Téléphone Export : 0825 801 801 ,
+📞 Téléphone Export : 0825 801 801`,
 
   tarifs_chronopost: localStorage.getItem("admin_tarifs_chronopost") || `💰 TARIFS CHRONOPOST
+
 
 https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Chain/Transport/Grilles%20tarifaires/Chronopost-2024/tarifs%2046193601-05-12-2024%20chrono%20actuel.pdf?csf=1&web=1&e=65k3vr`,
 
@@ -30,12 +32,14 @@ https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Ch
 👤 Identifiant : adv@hbp-associes.fr
 🔑 Mot de passe : 21017326`,
 
+  
   heppner: localStorage.getItem("admin_heppner") || `🚚 CONTACTER HEPPNER
 
 📞 Téléphone : 04 72 23 40 66
-📧 Email : 'customer-service-lyon@heppner-group.com',
+📧 Email : customer-service-lyon@heppner-group.com`,
 
   tarifs_heppner: localStorage.getItem("admin_tarifs_heppner") || `💰 TARIFS HEPPNER
+
 
 https://groupealliance.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7BFD5B2B25-DB56-4914-A809-829E948824DB%7D&file=GROUPE%20ASAP%20tarif%20applicable%20au%2001%2001%2026%20-%20heppner%20actuel.xlsx&action=default&mobileredirect=true`,
 
