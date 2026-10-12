@@ -8,10 +8,8 @@ const REPONSES = {
 
 📞 Téléphone National : 0892 70 25 07
 Horaires : lundi au vendredi, 8h - 18h
-Délais : 24 à 48h
 
-📞 Téléphone Export : 0825 801 801
-Délais : 72h ou plus selon destination`,
+📞 Téléphone Export : 0825 801 801 ,
 
   tarifs_chronopost: localStorage.getItem("admin_tarifs_chronopost") || `💰 TARIFS CHRONOPOST
 
@@ -35,7 +33,7 @@ https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Ch
   heppner: localStorage.getItem("admin_heppner") || `🚚 CONTACTER HEPPNER
 
 📞 Téléphone : 04 72 23 40 66
-📧 Email : audrey.pierrottet@heppner-group.com / lucie.loubiere@heppner-group.com`,
+📧 Email : customer-service-lyon@heppner-group.com ,
 
   tarifs_heppner: localStorage.getItem("admin_tarifs_heppner") || `💰 TARIFS HEPPNER
 
