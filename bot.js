@@ -33,7 +33,7 @@ https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Ch
   heppner: localStorage.getItem("admin_heppner") || `🚚 CONTACTER HEPPNER
 
 📞 Téléphone : 04 72 23 40 66
-📧 Email : customer-service-lyon@heppner-group.com,
+📧 Email : 'customer-service-lyon@heppner-group.com',
 
   tarifs_heppner: localStorage.getItem("admin_tarifs_heppner") || `💰 TARIFS HEPPNER
 
