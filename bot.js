@@ -28,9 +28,9 @@ https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Ch
 
   portail_chronopost: `🌐 PORTAIL CHRONOPOST
 
-🔗 https://www.chronopost.fr/fr/espace-client
-👤 Identifiant : adv@hbp-associes.fr
-🔑 Mot de passe : 21017326`,
+🔗 https://www.chronopost.fr/moncompte/displayCustomerArea.do?iv4Context=f574d8ddce159b59d0824922dc4b91df
+👤 Identifiant : o.lefort@groupe-alliance.com 
+🔑 Mot de passe : Nexitup2026*`,
 
   
   heppner: localStorage.getItem("admin_heppner") || `🚚 CONTACTER HEPPNER
