@@ -197,11 +197,11 @@ boutons.forEach(btn => {
     else if (cle === "portail_chronopost") {
       box.innerHTML = `
         <h3 class="titre-carte">🌐 Portail Chronopost</h3>
-        <a href="https://www.chronopost.fr/fr/espace-client" target="_blank" class="btn-lien">
+        <a href="https://www.chronopost.fr/expedier/loginShipping.do#contenu" target="_blank" class="btn-lien">
           Accéder au portail
         </a>
-        <p style="margin-top:12px;">👤 Identifiant : <strong>adv@hbp-associes.fr</strong></p>
-        <p>🔑 Mot de passe : <strong>21017326</strong></p>
+        <p style="margin-top:12px;">👤 Identifiant : <strong>o.lefort@groupe-alliance.com </strong></p>
+        <p>🔑 Mot de passe : <strong>Nexitup2026*</strong></p>
       `;
     }
     else if (cle === "portail_heppner") {
