@@ -28,7 +28,7 @@ https://groupealliance.sharepoint.com/:b:/r/docs/01%20-%20ALLIANCE-COM/Supply-Ch
 
   portail_chronopost: `🌐 PORTAIL CHRONOPOST
 
-🔗 https://www.chronopost.fr/moncompte/displayCustomerArea.do?iv4Context=f574d8ddce159b59d0824922dc4b91df&lang=fr_FR
+🔗 https://www.chronopost.fr/expedier/loginShipping.do#contenu
 👤 Identifiant : o.lefort@groupe-alliance.com 
 🔑 Mot de passe : Nexitup2026*`,
 
